@@ -51,6 +51,6 @@ class GeneratePassword:
 
 
 if __name__ == '__main__':
-    pg = GeneratePassword(16, True, True, True, 1)
+    pg = GeneratePassword(16, True, True, True, 0)
     for i in range(10):
         print(pg.random_pswd())
