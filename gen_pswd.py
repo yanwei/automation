@@ -14,7 +14,8 @@ class GeneratePassword:
         self.include_lower_letters = include_lower_letters
         self.include_upper_letters = include_upper_letters
         self.include_numbers = include_numbers
-        self.special_char_num = special_char_num  # use fewer special char instead of random to simplify password inputting
+        # use fewer special char instead of random to simplify password inputting
+        self.special_char_num = special_char_num
 
         self.candidate_chars = []
 
@@ -38,11 +39,11 @@ class GeneratePassword:
 
         pswd_list = []
 
-        for i in range(self.pswd_len - self.special_char_num):
+        for _ in range(self.pswd_len - self.special_char_num):
             index = random.randrange(0, len(self.candidate_chars))
             pswd_list.append(self.candidate_chars[index])
 
-        for i in range(self.special_char_num):
+        for _ in range(self.special_char_num):
             index1 = random.randrange(0, len(self.special_chars))
             index2 = random.randrange(0, len(pswd_list))
             pswd_list.insert(index2, self.special_chars[index1])
