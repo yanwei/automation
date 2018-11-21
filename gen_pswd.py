@@ -8,7 +8,7 @@ import random
 import string
 
 
-class GeneratePassword:
+class PasswordGenerator:
     def __init__(self, pswd_len, include_lower_letters, include_upper_letters, include_numbers, special_char_num):
         self.pswd_len = pswd_len
         self.include_lower_letters = include_lower_letters
@@ -52,6 +52,6 @@ class GeneratePassword:
 
 
 if __name__ == '__main__':
-    pg = GeneratePassword(16, True, True, True, 0)
+    pg = PasswordGenerator(16, True, True, True, 1)
     for i in range(10):
         print(pg.random_pswd())

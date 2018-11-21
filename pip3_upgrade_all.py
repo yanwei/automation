@@ -9,7 +9,17 @@
 import json
 import os
 
-package_list = json.loads(os.popen('pip3 list --outdated --format json').readlines()[0])
+package_list = json.loads(
+    os.popen('pip3 list --outdated --format json').readlines()[0])
+
+updated_packages = []
 
 for package in package_list:
     os.system('pip3 install -U ' + package['name'])
+    updated_packages.append(package['name'])
+
+if len(updated_packages) == 0:
+    print('All the packages are up to date.')
+else:
+    print('-' * 80)
+    print('Successfully updated {} packages: {}'.format(len(updated_packages), ', '.join(updated_packages)))
