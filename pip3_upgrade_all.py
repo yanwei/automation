@@ -22,4 +22,4 @@ if len(updated_packages) == 0:
     print('All the packages are up to date.')
 else:
     print('-' * 80)
-    print('Successfully updated {} packages: {}'.format(len(updated_packages), ', '.join(updated_packages)))
+    print('Successfully updated {} package(s): {}'.format(len(updated_packages), ', '.join(updated_packages)))
