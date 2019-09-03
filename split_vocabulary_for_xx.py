@@ -1,7 +1,13 @@
 import openpyxl
 import re
+import os
 
 file_path = '/Users/yanwei/Desktop/中考词汇手册.xlsx'
+
+if not os.path.isfile(file_path):
+    print(f'File {file_path} does not exist!')
+    os._exit(0)
+
 file_path_new = '/Users/yanwei/Desktop/中考词汇手册(new).csv'
 
 wb = openpyxl.load_workbook(file_path)
