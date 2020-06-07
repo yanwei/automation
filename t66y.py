@@ -2,7 +2,7 @@ import requests
 from requests_html import HTMLSession
 import re
 
-proxies = {"http": "http://127.0.0.1:1087", "https": "http://127.0.0.1:1087"}
+proxies = {"http": "http://127.0.0.1:63632", "https": "http://127.0.0.1:63632"}
 list_url = 'http://t66y.com/thread0806.php?fid=8&type=1'
 page_url = 'http://t66y.com/htm_data/8/1811/3345760.html'
 base_url = 'http://t66y.com/'
