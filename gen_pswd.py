@@ -31,10 +31,10 @@ class PasswordGenerator:
             for c in string.digits:
                 self.candidate_chars.append(c)
 
-        self.special_chars = r'`~!@#$%^&*()-_=+[{]}\\|;:\'\",<.>/?'
+        self.special_chars = string.punctuation
 
     def random_pswd(self):
-        if self.special_char_num >= self.pswd_len:
+        if self.special_char_num > self.pswd_len:
             return '特殊字符数不能超过密码总长度！'
 
         pswd_list = []
@@ -45,7 +45,7 @@ class PasswordGenerator:
 
         for _ in range(self.special_char_num):
             index1 = random.randrange(0, len(self.special_chars))
-            index2 = random.randrange(0, len(pswd_list))
+            index2 = random.randrange(0, len(pswd_list) + 1)
             pswd_list.insert(index2, self.special_chars[index1])
 
         return ''.join(pswd_list)
